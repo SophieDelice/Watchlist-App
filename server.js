@@ -5,6 +5,8 @@ const mongoose = require("mongoose");
 
 const Movies = require("./models/movies"); 
 
+const methodOverride = require("method-override"); 
+
 //initialize the application 
 const app = express(); 
 
@@ -33,6 +35,7 @@ db.on("error" , (error) => {
 
 // mount middleware 
 app.use(express.urlencoded({ extended: false})); 
+app.use(methodOverride("_method")); 
 
 // mount routes 
 
@@ -54,7 +57,10 @@ app.get("/movies/new", (req,res) => {
 
 // Delete 
 app.delete("/movies/:id", (req, res) => {
-   res.send("deleted")
+    Movies.findByIdAndDelete(req.params.id, (error, deletedMovie) => {
+    res.redirect("/movies"); 
+    });
+   
 }); 
 
 // Update 
