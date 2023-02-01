@@ -3,6 +3,8 @@ const express = require("express");
 
 const mongoose = require("mongoose"); 
 
+const Movies = require("./models/movies"); 
+
 //initialize the application 
 const app = express(); 
 
@@ -39,7 +41,9 @@ app.use(express.urlencoded({ extended: false}));
 // Index 
 
 // New 
-
+app.get("/movies/new", (req,res) => {
+ res.render("new.ejs");
+}); 
 // Delete 
 
 // Update 
@@ -51,8 +55,11 @@ app.post("/movies", (req, res) => {
     } else {
         req.body.watched = false; 
     }
-  res.send(req.body);
-  
+
+    Movies.create(req.body, (error, createdMovie) => {
+    res.send(createdMovie);
+
+    });
 }); 
 
 // Edit

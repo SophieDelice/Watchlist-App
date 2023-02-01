@@ -8,6 +8,7 @@ const moviesSchema = new Schema({
   title: {type: String, required: true },
   streamingService: {type: String, }, 
   year: { type: Date, required: true}, 
+  img: {type: String}, 
   watched: Boolean
 });
 
