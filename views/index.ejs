@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+</head>
+<body>
+    <h1>List of Shows/Movies to watch: </h1>
+
+<nav>
+   <button>  <a href="/movies/new"> Add a New Show or Movie </a>  </button> 
+</nav>
+
+
+    <ul>
+        <% movies.forEach(movie => { %>
+          <li>
+            <a href="/movie/<%=movie._id%>">
+             <%=movie.title %>
+            </a>
+           
+            <img src="<%=movie.img%>" alt="Poster of show/movie">
+          </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

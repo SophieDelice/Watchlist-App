@@ -39,6 +39,13 @@ app.use(express.urlencoded({ extended: false}));
 // INDUCES 
 
 // Index 
+app.get("/movies", (req,res) => {
+ Movies.find({}, (error, allMovies) => {
+    res.render("index.ejs", {
+     movies:allMovies
+    });
+ });
+});
 
 // New 
 app.get("/movies/new", (req,res) => {
@@ -57,7 +64,7 @@ app.post("/movies", (req, res) => {
     }
 
     Movies.create(req.body, (error, createdMovie) => {
-    res.send(createdMovie);
+    res.redirect("/movies");
 
     });
 }); 
@@ -65,7 +72,11 @@ app.post("/movies", (req, res) => {
 // Edit
 
 // Show 
-
+app.get("/movies/:id", (req,res) => {
+  Movies.findById(req.params.id, (error, foundMovie) => {
+   res.send(foundMovie); 
+  }); 
+});  
 // tell the app to listen 
 app.listen(PORT, () => {
    console.log(`Express is listening on port:${PORT}`);
