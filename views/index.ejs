@@ -17,9 +17,12 @@
     <ul>
         <% movies.forEach(movie => { %>
           <li>
-            <a href="/movie/<%=movie._id%>">
+            <a href="/movies/<%=movie._id%>">
              <%=movie.title %>
             </a>
+            <form>
+                <button> <input type="submit" value="DELETE"</button>
+             </form>
            
             <img src="<%=movie.img%>" alt="Poster of show/movie">
           </li>

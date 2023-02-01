@@ -51,7 +51,11 @@ app.get("/movies", (req,res) => {
 app.get("/movies/new", (req,res) => {
  res.render("new.ejs");
 }); 
+
 // Delete 
+app.delete("/movies/:id", (req, res) => {
+   res.send("deleted")
+}); 
 
 // Update 
 
@@ -74,8 +78,10 @@ app.post("/movies", (req, res) => {
 // Show 
 app.get("/movies/:id", (req,res) => {
   Movies.findById(req.params.id, (error, foundMovie) => {
-   res.send(foundMovie); 
-  }); 
+   res.render("show.ejs", { 
+    movie:foundMovie
+      }); 
+   }); 
 });  
 // tell the app to listen 
 app.listen(PORT, () => {
