@@ -21,13 +21,20 @@
 
     <p> Watched: <%- movie.watched ? "Yes" : "No" %></p>
 
+<!-- 
+        <button onclick="history.back()">Go Back</button> -->
+    
     <form>
        <nav>
 
       <button> <a herf="/movies"> Back to Watchlist Page </a> </button>  
-      
+  
+      <button> <a href="/movies/<%=movie._id%>/edit">Edit</a>  </button>
+
     </nav> 
     </form>
+
+
  
 </body>
 </html>

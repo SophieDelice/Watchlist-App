@@ -7,7 +7,7 @@ const moviesSchema = new Schema({
   category: {type: String},
   title: {type: String, required: true },
   streamingService: {type: String, }, 
-  year: { type: Date, required: true}, 
+  year: { type: Number, }, 
   img: {type: String}, 
   watched: Boolean
 });

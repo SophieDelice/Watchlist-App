@@ -22,9 +22,14 @@
             </a>
             <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
                 <button> <input type="submit" value="DELETE"</button>
+               
              </form>
-           
+
+             
+             
             <img src="<%=movie.img%>" alt="Poster of show/movie">
+
+        
           </li>
         <% }); %>
     </ul>

@@ -80,6 +80,14 @@ app.post("/movies", (req, res) => {
 }); 
 
 // Edit
+app.get("/movies/:id/edit", (req,res) => { 
+    Movies.findById(req.params.id, (error, foundMovie) => {
+    res.render("edit.ejs", {
+         movie:foundMovie
+       }); 
+    });
+});
+
 
 // Show 
 app.get("/movies/:id", (req,res) => {
