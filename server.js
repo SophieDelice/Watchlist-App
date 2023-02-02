@@ -64,6 +64,17 @@ app.delete("/movies/:id", (req, res) => {
 }); 
 
 // Update 
+app.put("/movies:id", (req,res) => {
+
+    // if(req.body.watched === "on") {
+    // require.body.watched =true;
+    // } else {
+    //     req.body.watched = false;
+    // }
+    Movies.findByIdAndUpdate(req.params.id, req.body, (error, movie) => {
+     res.redirect("/movies")
+    });
+});
 
 // Create
 app.post("/movies", (req, res) => {
