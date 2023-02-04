@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(236, 245, 236);
+}
+
+.indexPage {
+    display:grid;
+    text-align: center;
+}
+.navbar{
+    height:180px; 
+    width: 100%;
+    background:rgb(71, 71, 63);
+}
+
+.logo{
+    width: 170px;
+    height: auto;
+    padding:50px 0px;
+}
+
+.navbar ul{
+    float: right; 
+    margin-right: 20px;
+}
+
+.navbar ul li{
+    list-style-type: none;
+    margin: 0 8 px, 
+    line-height: 80px, 
+
+}
+
+.navbar ul li a {
+color: white; 
+font-size: 20px;
+line-height: 80px, 
+}
+
+.firstImages{
+    width: 300 px;
+    height: 500px;
+}
+
+.allImages{
+    border-radius: 8px;
+    padding: 5px;
+    width: 150px;
+}

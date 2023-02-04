@@ -4,24 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/style.css"/>
+
     <title>Index Page</title>
 </head>
 <body>
-    <h1>List of Shows/Movies to watch: </h1>
 
-<nav>
+  <div class="wrapper">
+<nav class="navbar">
+
+ <img class ="logo" src="https://images.unsplash.com/photo-1528928441742-b4ccac1bb04c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80.png">
+ 
+ <ul>
+ <button ><a href="?category=everything"> Everything</a></button> 
+
+  <button><a href="?category=Movie"> Movies</a></button>
+
+  <button><a href="?category=TV Show"> Tv Shows</a></button>
+
+  </li>
+ </ul>
+</nav>
+  </div>
+
+    <div class="indexPage">
+
+    
+        <h1> My List : </h1>
+
+<nav >
    <button>  <a href="/movies/new"> Add a New Show or Movie </a>  </button> 
 </nav>
+ <h1></h1>
 
-
-    <ul>
         <% movies.forEach(movie => { %>
           <li>
-            <a href="/movies/<%=movie._id%>">
+            <a class = "firstImages"href="/movies/<%=movie._id%>">
              <%=movie.title %>
             </a>
             <form action="/movies/<%= movie._id %>?_method=DELETE" method="POST">
-                <button> <input type="submit" value="DELETE"</button>
+                <button> <input type="submit" value="DELETE"/></button>
                
              </form>
 
@@ -32,6 +55,9 @@
         
           </li>
         <% }); %>
-    </ul>
+
+        <h1>“Sometimes you gotta work a little so you can ball a lot.” —Tom Haverford</h1>
+
+</div>
 </body>
 </html>

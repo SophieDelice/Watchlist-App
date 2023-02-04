@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css"/>
+
     <title>Show Page</title>
 </head>
 <body>
     
+    <button onclick="myFunction()"><a href="#"> Tv Shows</a></button>
 
     <h1><%= movie.title %> </h1>
+
 
     <p>Category: <%=movie.category%> </p>
 
@@ -27,14 +32,14 @@
     <form>
        <nav>
 
-      <button> <a herf="/movies"> Back to Watchlist Page </a> </button>  
+      <button> <a href="/movies"> Back to Watchlist Page </a> </button>  
   
       <button> <a href="/movies/<%=movie._id%>/edit">Edit</a>  </button>
 
     </nav> 
     </form>
 
-
+<h1>“Just remember, every time you look up at the moon, I, too, will be looking at a moon. Not the same moon, obviously. That's impossible.” —Andy Dwyer</h1>
  
 </body>
 </html>

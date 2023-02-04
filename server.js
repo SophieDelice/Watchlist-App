@@ -36,6 +36,7 @@ db.on("error" , (error) => {
 // mount middleware 
 app.use(express.urlencoded({ extended: false})); 
 app.use(methodOverride("_method")); 
+app.use(express.static("public"));
 
 // mount routes 
 
@@ -43,12 +44,23 @@ app.use(methodOverride("_method"));
 
 // Index 
 app.get("/movies", (req,res) => {
- Movies.find({}, (error, allMovies) => {
-    res.render("index.ejs", {
-     movies:allMovies
-    });
+    let category = req.query.category
+    if ( category === "everything" || category == undefined) {
+        Movies.find({}, (error, allMovies) => {
+            res.render("index.ejs", {
+             movies:allMovies
+            });
+         });
+
+    } else {
+        Movies.find({category: category}, (error, allMovies) => {
+            res.render("index.ejs", {
+             movies:allMovies
+            });
+         });
+    }
+    
  });
-});
 
 // New 
 app.get("/movies/new", (req,res) => {
@@ -64,13 +76,13 @@ app.delete("/movies/:id", (req, res) => {
 }); 
 
 // Update 
-app.put("/movies:id", (req,res) => {
+app.put("/movies/:id", (req,res) => {
 
-    // if(req.body.watched === "on") {
-    // require.body.watched =true;
-    // } else {
-    //     req.body.watched = false;
-    // }
+    if(req.body.watched === "on") {
+    req.body.watched =true;
+    } else {
+        req.body.watched = false;
+    }
     Movies.findByIdAndUpdate(req.params.id, req.body, (error, movie) => {
      res.redirect("/movies")
     });
