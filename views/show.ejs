@@ -10,15 +10,25 @@
     <title>Show Page</title>
 </head>
 <body>
+    <style>
+        h1{text-align: center;}
+        body{ text-align: center;
+        padding: 70px 0;
+       border: 6px solid green;
+       width: 1800px; 
+       margin: auto; 
     
-    <button onclick="myFunction()"><a href="#"> Tv Shows</a></button>
+    }
+
+    </style>
 
     <h1><%= movie.title %> </h1>
 
-
+   
+ <div class="showPage">
     <p>Category: <%=movie.category%> </p>
 
-    <img src="<%=movie.img%>" alt="Poster of show/movie">
+    <img src="<%=movie.img%>" width="auto" height="300" alt="Poster of show/movie">
 
     <p> Watched On: <%=movie.streamingService%> </p>
 
@@ -26,9 +36,7 @@
 
     <p> Watched: <%- movie.watched ? "Yes" : "No" %></p>
 
-<!-- 
-        <button onclick="history.back()">Go Back</button> -->
-    
+</div>
     <form>
        <nav>
 
@@ -39,7 +47,7 @@
     </nav> 
     </form>
 
-<h1>“Just remember, every time you look up at the moon, I, too, will be looking at a moon. Not the same moon, obviously. That's impossible.” —Andy Dwyer</h1>
+<h2>“Just remember, every time you look up at the moon, I, too, will be looking at a moon. Not the same moon, obviously. That's impossible.” —Andy Dwyer</h2>
  
 </body>
 </html>

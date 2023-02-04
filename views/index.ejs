@@ -16,7 +16,7 @@
 
  <img class ="logo" src="https://images.unsplash.com/photo-1528928441742-b4ccac1bb04c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80.png">
  
- <ul>
+ <ul class="nav-list">
  <button ><a href="?category=everything"> Everything</a></button> 
 
   <button><a href="?category=Movie"> Movies</a></button>
@@ -36,8 +36,8 @@
 <nav >
    <button>  <a href="/movies/new"> Add a New Show or Movie </a>  </button> 
 </nav>
- <h1></h1>
-
+ 
+  <div class="movies-wrapper">
         <% movies.forEach(movie => { %>
           <li>
             <a class = "firstImages"href="/movies/<%=movie._id%>">
@@ -55,8 +55,8 @@
         
           </li>
         <% }); %>
-
-        <h1>“Sometimes you gotta work a little so you can ball a lot.” —Tom Haverford</h1>
+      </div>
+        <h2>“Sometimes you gotta work a little so you can ball a lot.” —Tom Haverford</h2>
 
 </div>
 </body>

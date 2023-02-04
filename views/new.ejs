@@ -10,6 +10,22 @@
     <title> New Page</title>
 </head>
 <body>
+
+    <style>
+        h1{text-align: center;}
+        body{ 
+            text-align: center; 
+            padding: 70px 0;
+            border: 3px solid green;
+            width: 1800px; 
+            margin: auto; 
+            /* position: absolute; */
+            top: 50%;
+            left: 50%
+        }
+
+    </style>
+
     <h1> Add a New Show or Movie </h1>
 
     <form action="/movies" method="post">
@@ -42,9 +58,12 @@
    
 </form>
  
+<form>
+    <input type="button" value="Go back!" onclick="history.back()">
+   </form>
 
     
-    <h1>"Cinema is the most beautiful fraud in the world." - Jean-Luc Godard</h1>
+    <h2>"Cinema is the most beautiful fraud in the world." - Jean-Luc Godard</h2>
 
 </body>
 </html>
